@@ -648,22 +648,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1382669748, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1382669749, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1126019921}
-    - target: {fileID: 1382669750, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1382669751, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4660453001019100635, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -707,10 +695,6 @@ PrefabInstance:
     - target: {fileID: 4660453001019100635, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036655805963539213, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.26
       objectReference: {fileID: 0}
     - target: {fileID: 7655372911113928921, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
       propertyPath: m_Name
