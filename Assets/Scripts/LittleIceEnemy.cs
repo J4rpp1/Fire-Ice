@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceEnemy : MonoBehaviour
+public class LittleIceEnemy : MonoBehaviour
 {
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
-    public float speed = 0.8f;
+    public float speed = 0.4f;
     public Transform target;
-    public float damage = 2;
-    public float maxHp = 7;
+    public float damage = 10;
+    public float maxHp = 20;
     public float currentHp;
     public float takeDamage = 1;
-    public float addPoints = 100;
+    public float addPoints = 200;
     public int addToKills = 1;
 
 
@@ -46,7 +46,7 @@ public class IceEnemy : MonoBehaviour
 
     void Start()
     {
-        
+
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
 
@@ -83,7 +83,7 @@ public class IceEnemy : MonoBehaviour
             playerHp.currentHp = playerHp.currentHp - damage;
             yield return new WaitForSeconds(1);
             // damaging = false;
-            
+
         }
 
     }

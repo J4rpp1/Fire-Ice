@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class FireEnemy : MonoBehaviour
 {
+    EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
-    public float speed = 1.0f;
+    public float speed = 0.8f;
     public Transform target;
     public float damage = 2;
     public float maxHp = 7;
     public float currentHp;
     public float takeDamage = 1;
     public float addPoints = 100;
-   
+    public int addToKills = 1;
 
 
 
     private void Awake()
     {
         playerHp = FindObjectOfType<PlayerHp>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
+        score = FindObjectOfType<Score>();
     }
 
 
@@ -43,7 +46,7 @@ public class FireEnemy : MonoBehaviour
   
     void Start()
     {
-        score = FindObjectOfType<Score>();
+        
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
 
@@ -65,6 +68,7 @@ public class FireEnemy : MonoBehaviour
 
         if (currentHp == 0)
         {
+            enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
             score.currentScore = score.currentScore + addPoints;
             Destroy(gameObject);
 
