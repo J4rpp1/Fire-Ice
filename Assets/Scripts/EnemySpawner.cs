@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Enemyspawner());
+        StartCoroutine(Enemyspawner1());
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     {
         
     }
-    IEnumerator Enemyspawner()
+    IEnumerator Enemyspawner1()
     {
         int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
         int select = Random.Range(0, mediumEnemy.Length);      //selects ice or fire enemy
@@ -42,5 +42,20 @@ public class EnemySpawner : MonoBehaviour
         int select4 = Random.Range(0, mediumEnemy.Length);
         GameObject.Instantiate(mediumEnemy[select4], mediumSpawnPoints[spawn4].transform.position, Quaternion.identity);
         Debug.Log("neljäs");
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select], mediumSpawnPoints[spawn].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select2], mediumSpawnPoints[spawn2].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select4], mediumSpawnPoints[spawn4].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+
     }
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class IceEnemy : MonoBehaviour
 {
+    Score score;
     PlayerHp playerHp;
     public float speed = 1.0f;
     public Transform target;
     public float damage = 2;
-    public float maxHp = 10;
+    public float maxHp = 7;
     public float currentHp;
     public float takeDamage = 1;
+    public float addPoints = 100;
 
 
 
@@ -41,6 +43,7 @@ public class IceEnemy : MonoBehaviour
 
     void Start()
     {
+        score = FindObjectOfType<Score>();
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
 
@@ -62,6 +65,7 @@ public class IceEnemy : MonoBehaviour
 
         if (currentHp == 0)
         {
+            score.currentScore = score.currentScore + addPoints;
             Destroy(gameObject);
         }
 
@@ -75,7 +79,7 @@ public class IceEnemy : MonoBehaviour
             playerHp.currentHp = playerHp.currentHp - damage;
             yield return new WaitForSeconds(1);
             // damaging = false;
-            Debug.Log("Loppu");
+            
         }
 
     }

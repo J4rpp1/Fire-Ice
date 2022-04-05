@@ -11,6 +11,7 @@ public class IceBullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+       // Debug.Log("osui");
         Destroy(gameObject);
     }
     // Update is called once per frame
