@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3630805107547516519}
   - component: {fileID: 3630805107547516518}
   - component: {fileID: 3630805107547516517}
-  - component: {fileID: 3630805107547516521}
   - component: {fileID: 270734025088588117}
+  - component: {fileID: 6726115695980323533}
   m_Layer: 0
-  m_Name: Medium enemy
+  m_Name: Medium IceEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8ab07b55a93e0e94fba581c85ce8bd67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,21 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.3974341}
   m_Center: {x: 0, y: 0, z: -0.19871712}
---- !u!114 &3630805107547516521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3630805107547516516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eb2d5ca4cd79a64fb616a23d95b7326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  target: {fileID: 0}
-  damage: 2
 --- !u!54 &270734025088588117
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +113,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6726115695980323533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630805107547516516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb2d5ca4cd79a64fb616a23d95b7326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  target: {fileID: 0}
+  damage: 2
+  maxHp: 10
+  currentHp: 0
+  takeDamage: 1

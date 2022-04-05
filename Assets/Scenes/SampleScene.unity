@@ -187,7 +187,9 @@ MonoBehaviour:
   - {fileID: 1618764923}
   - {fileID: 83204685}
   selected: 0
-  mediumEnemy: {fileID: 3630805107547516516, guid: 1f1131e8bba5b7f48aaea75a49b02d90, type: 3}
+  mediumEnemy:
+  - {fileID: 3630805107547516516, guid: c0de8c5b46101dd4eb792376ccdf5c88, type: 3}
+  - {fileID: 3630805107547516516, guid: 1f1131e8bba5b7f48aaea75a49b02d90, type: 3}
 --- !u!4 &126673941
 Transform:
   m_ObjectHideFlags: 0
@@ -652,6 +654,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1126019921}
+    - target: {fileID: 4498210202886766549, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4660453001019100635, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -232,7 +232,7 @@ BoxCollider:
   m_GameObject: {fileID: 1260988685630210885}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2999eddae58c03b41834d32ff909a642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: -6624849854348202945, guid: 2a5e22675d4b18949bf0ecd668a94aeb, type: 3}
+  projectile: {fileID: -6624849854348202945, guid: 4c5c65396b01ef74e83b1768f794295a, type: 3}
   speed: 20
   fireRate: 0.2
   canFire: 0
@@ -454,7 +454,7 @@ BoxCollider:
   m_GameObject: {fileID: 2900362133429699679}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
