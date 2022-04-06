@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LittleIceEnemy : MonoBehaviour
+public class BossEnemy : MonoBehaviour
 {
+
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
-    public float speed = 0.4f;
+    public float speed = 0.3f;
     public Transform target;
-    public float damage = 10;
+    public float damage = 5;
     public float maxHp = 30;
     public float currentHp;
     public float takeDamage = 1;
-    public float addPoints = 200;
+    public float addPoints = 1000;
     public int addToKills = 1;
-
-
 
     private void Awake()
     {
@@ -24,39 +23,13 @@ public class LittleIceEnemy : MonoBehaviour
         enemySpawner = FindObjectOfType<EnemySpawner>();
         score = FindObjectOfType<Score>();
     }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "Player")
-        {
-            //playerHp.currentHp -= Time.deltaTime * damage / 6f;
-            StartCoroutine(Damage());
-        }
-        if (other.tag == "FireBullet")
-        {
-            currentHp = currentHp - takeDamage;
-            
-        }
-        if (other.tag == "IceBullet")
-        {
-            currentHp = currentHp + takeDamage;
-        }
-
-    }
-
     void Start()
     {
-
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
-
-
-
-
     }
 
-
+    // Update is called once per frame
     void Update()
     {
 
@@ -74,8 +47,26 @@ public class LittleIceEnemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Player")
+        {
+            //playerHp.currentHp -= Time.deltaTime * damage / 6f;
+            StartCoroutine(Damage());
+        }
+        if (other.tag == "FireBullet")
+        {
+            currentHp = currentHp + takeDamage;
+        }
+        if (other.tag == "IceBullet")
+        {
+            currentHp = currentHp - takeDamage;
+        }
 
     }
+
     IEnumerator Damage()
     {
         while (true)
@@ -89,4 +80,3 @@ public class LittleIceEnemy : MonoBehaviour
 
     }
 }
-

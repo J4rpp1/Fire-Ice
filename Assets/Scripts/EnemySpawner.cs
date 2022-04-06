@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public TMP_Text bossText;
+    public TMP_Text countText;
     public static EnemySpawner instance;
     public GameObject[] mediumSpawnPoints;
+    public GameObject bossSpawnPoint;
     public GameObject littleSpawnPoint;
     public int selected;
     public GameObject[] mediumEnemy;
     public GameObject[] littleEnemy;
+    public GameObject bossEnemy;
     public int wave;
     public int enemiesKilled;
+    public bool enableBossText;
+
+
+    public bool completedWave1;
 
 
     private void Awake()
@@ -20,15 +29,16 @@ public class EnemySpawner : MonoBehaviour
     }
     void Start()
     {
+        enableBossText = true;
         StartCoroutine(Enemyspawner1());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemiesKilled == 11)
+        if (enemiesKilled == 12 && enableBossText && completedWave1 == false)
         {
-            Debug.Log("bossi");
+            StartCoroutine(Boss());
         }
     }
     IEnumerator Enemyspawner1()
@@ -66,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         int select7 = Random.Range(0, littleEnemy.Length);
-        GameObject.Instantiate(littleEnemy[select7], littleSpawnPoint.transform.position, Quaternion.identity);
+        GameObject.Instantiate(littleEnemy[select7], littleSpawnPoint.transform.position, Quaternion.identity);  //Spawnaa pieni vihollinen
 
         int spawn5 = Random.Range(0, mediumSpawnPoints.Length);
         int select5 = Random.Range(0, mediumEnemy.Length);
@@ -83,4 +93,24 @@ public class EnemySpawner : MonoBehaviour
 
         
     }
+
+    IEnumerator Boss()
+    {
+        enableBossText = false;
+        bossText.text = "BOSS INCOMING";
+        yield return new WaitForSeconds(1);
+        countText.text = "3";
+        yield return new WaitForSeconds(1);
+        countText.text = "2";
+        yield return new WaitForSeconds(1);
+        countText.text = "1";
+        yield return new WaitForSeconds(1);
+        countText.text = "0";
+        yield return new WaitForSeconds(1);
+        bossText.text = "";
+        countText.text = "";
+        enemiesKilled = 0;
+        GameObject.Instantiate(bossEnemy, bossSpawnPoint.transform.position, Quaternion.identity);
+    }
+
 }

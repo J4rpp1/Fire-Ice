@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LittleIceEnemy : MonoBehaviour
+public class LittleFireEnemy : MonoBehaviour
 {
     EnemySpawner enemySpawner;
     Score score;
@@ -35,12 +35,12 @@ public class LittleIceEnemy : MonoBehaviour
         }
         if (other.tag == "FireBullet")
         {
-            currentHp = currentHp - takeDamage;
-            
+            currentHp = currentHp + takeDamage;
+
         }
         if (other.tag == "IceBullet")
         {
-            currentHp = currentHp + takeDamage;
+            currentHp = currentHp - takeDamage;
         }
 
     }
@@ -89,4 +89,5 @@ public class LittleIceEnemy : MonoBehaviour
 
     }
 }
+
 

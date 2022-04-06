@@ -7,7 +7,7 @@ public class IceEnemy : MonoBehaviour
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
-    public float speed = 0.8f;
+    public float speed = 0.7f;
     public Transform target;
     public float damage = 2;
     public float maxHp = 7;
@@ -61,7 +61,7 @@ public class IceEnemy : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         //Debug.Log(currentHp);
-        if (currentHp > 10)
+        if (currentHp > maxHp)
         {
             currentHp = maxHp;
         }
