@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject bossEnemy;
     public int wave;
     public int enemiesKilled;
+    public int bossesKilled;
     public bool enableBossText;
 
 
@@ -39,6 +40,10 @@ public class EnemySpawner : MonoBehaviour
         if (enemiesKilled == 12 && enableBossText && completedWave1 == false)
         {
             StartCoroutine(Boss());
+        }
+        if (bossesKilled == 1)
+        {
+            
         }
     }
     IEnumerator Enemyspawner1()

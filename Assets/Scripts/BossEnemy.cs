@@ -42,7 +42,7 @@ public class BossEnemy : MonoBehaviour
 
         if (currentHp == 0)
         {
-            enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
+            enemySpawner.bossesKilled = enemySpawner.bossesKilled + addToKills;
             score.currentScore = score.currentScore + addPoints;
             Destroy(gameObject);
         }

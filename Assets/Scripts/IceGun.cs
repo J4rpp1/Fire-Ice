@@ -11,10 +11,12 @@ public class IceGun : MonoBehaviour
     [HideInInspector] public bool canFire;
     public Transform shootPosition;
     public Transform target;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         canFire = true;
     }
 
@@ -30,6 +32,7 @@ public class IceGun : MonoBehaviour
 
         if (Input.GetButton("Fire2") && canFire)
         {
+            animator.SetTrigger("Shoot");
             StartCoroutine(FireRate());
 
         }
