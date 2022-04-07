@@ -1,16 +1,22 @@
 using UnityEngine;
 using System.Collections;
 
-public class mouseFollow : MonoBehaviour
+public class MouseFollow : MonoBehaviour
 {
 
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
+    public static MouseFollow instance;
+    public bool hideCrosshair;
+    public GameObject crosshair;
 
-    // Use this for initialization
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        Cursor.visible = false;
+        hideCrosshair = false;
     }
 
     // Update is called once per frame
@@ -21,6 +27,10 @@ public class mouseFollow : MonoBehaviour
           mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
       transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);*/
 
+        if(hideCrosshair)
+        {
+            crosshair.SetActive(false);
+        }
 
     }
 }

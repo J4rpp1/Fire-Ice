@@ -5,8 +5,10 @@ using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
+    MouseFollow mouseFollow;
     public TMP_Text bossText;
     public TMP_Text countText;
+    public GameObject shopMenu;
     public static EnemySpawner instance;
     public GameObject[] mediumSpawnPoints;
     public GameObject bossSpawnPoint;
@@ -30,6 +32,8 @@ public class EnemySpawner : MonoBehaviour
     }
     void Start()
     {
+        mouseFollow = FindObjectOfType<MouseFollow>();
+        Cursor.visible = false;
         enableBossText = true;
         StartCoroutine(Enemyspawner1());
     }
@@ -43,8 +47,11 @@ public class EnemySpawner : MonoBehaviour
         }
         if (bossesKilled == 1)
         {
-            
+            mouseFollow.hideCrosshair = true;
+            shopMenu.SetActive(true);
+            Cursor.visible = true;
         }
+
     }
     IEnumerator Enemyspawner1()
     {
