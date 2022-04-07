@@ -133,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740463082510038238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.543}
+  m_LocalPosition: {x: 0, y: -0.026999936, z: 1.2110006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1979809825861681799}
@@ -734,7 +734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5579998478329525502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.543}
+  m_LocalPosition: {x: 0, y: -0.027, z: 1.211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8837368806863101702}
@@ -906,11 +906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.21799994
       objectReference: {fileID: 0}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.073999405
       objectReference: {fileID: 0}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -962,6 +962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8837368806863101702}
     m_Modifications:
+    - target: {fileID: 3005376261028919355, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ab07b55a93e0e94fba581c85ce8bd67, type: 2}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -972,11 +976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.21799994
       objectReference: {fileID: 0}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.073999405
       objectReference: {fileID: 0}
     - target: {fileID: 3588907173642547068, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1014,6 +1018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 7324882697284481642, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ab07b55a93e0e94fba581c85ce8bd67, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 020f2c681109eb64e89a23b7dc66e3a2, type: 3}
 --- !u!4 &2267840549216908313 stripped
