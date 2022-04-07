@@ -16,7 +16,7 @@ public class FireGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         canFire = true;
     }
 
