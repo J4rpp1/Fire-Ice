@@ -47,12 +47,16 @@ public class EnemySpawner : MonoBehaviour
         }
         if (bossesKilled == 1)
         {
+            completedWave1 = true;
+            enableBossText = true;
             mouseFollow.hideCrosshair = true;
             shopMenu.SetActive(true);
             Cursor.visible = true;
         }
 
     }
+
+    #region Wave system
     IEnumerator Enemyspawner1()
     {
         int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
@@ -105,7 +109,7 @@ public class EnemySpawner : MonoBehaviour
 
         
     }
-
+    #endregion
     IEnumerator Boss()
     {
         enableBossText = false;
