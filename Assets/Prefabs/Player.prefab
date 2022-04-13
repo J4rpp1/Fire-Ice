@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: -6624849854348202945, guid: 4c5c65396b01ef74e83b1768f794295a, type: 3}
   speed: 20
-  fireRate: 0.2
+  fireRate: 0.5
   canFire: 0
   shootPosition: {fileID: 2354539082193228581}
   target: {fileID: 1382669753}
@@ -344,6 +344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
+  hideCrosshair: 0
+  crosshair: {fileID: 0}
 --- !u!1 &2900362133429699679
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: -6624849854348202945, guid: 2a5e22675d4b18949bf0ecd668a94aeb, type: 3}
   speed: 20
-  fireRate: 0.2
+  fireRate: 0.5
   canFire: 0
   shootPosition: {fileID: 5564034174979289720}
   target: {fileID: 1382669753}

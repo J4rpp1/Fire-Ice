@@ -365,7 +365,7 @@ MonoBehaviour:
   - {fileID: 3630805107547516516, guid: c0de8c5b46101dd4eb792376ccdf5c88, type: 3}
   - {fileID: 3630805107547516516, guid: 1f1131e8bba5b7f48aaea75a49b02d90, type: 3}
   littleEnemy:
-  - {fileID: 3630805107547516516, guid: 173928fc94862144780e694538ad57fd, type: 3}
+  - {fileID: 6492992145747641400, guid: 718d2c720daea424caef380d034a96bf, type: 3}
   - {fileID: 6492992145747641400, guid: cb32c4e23b227634e8d3d637c57d2d49, type: 3}
   bossEnemy: {fileID: 5837933679082006591, guid: c00075b129f8b1344bdb93f13e4af66c, type: 3}
   wave: 0

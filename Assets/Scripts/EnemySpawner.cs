@@ -57,12 +57,17 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(Boss());
         }
 
+        if (enemiesKilled == 20 && enableBossText && wave == 3)
+        {
+            StartCoroutine(Boss());
+        }
+
 
         if (bossesKilled == 1)
         {
             completedWave1 = true;
             enableBossText = true;
-            mouseFollow.hideCrosshair = true;
+            mouseFollow.crosshair.SetActive(false);
             shopMenu.SetActive(true);
             Cursor.visible = true;
             bossesKilled = 0;
@@ -72,6 +77,21 @@ public class EnemySpawner : MonoBehaviour
             
             waveText.text = "Wave " + wave.ToString();
             StartCoroutine(Enemyspawner2());
+        }
+        if (wave == 3 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            StartCoroutine(Enemyspawner3());
+        }
+        if (wave == 4 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            //StartCoroutine(Enemyspawner4());
+        }
+        if (wave == 5 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            //StartCoroutine(Enemyspawner5());
         }
     }
 
@@ -132,6 +152,8 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator Enemyspawner2()
     {
         shopMenu.SetActive(false);
+        Cursor.visible = false;
+        mouseFollow.crosshair.SetActive(true);
         roundStarted = true;
         int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
         int select = Random.Range(0, mediumEnemy.Length);      //selects ice or fire enemy
@@ -192,6 +214,89 @@ public class EnemySpawner : MonoBehaviour
         int select9 = Random.Range(0, littleEnemy.Length);
         GameObject.Instantiate(littleEnemy[select9], littleSpawnPoint.transform.position, Quaternion.identity);
 
+
+    }
+
+    IEnumerator Enemyspawner3()
+    {
+        shopMenu.SetActive(false);
+        Cursor.visible = false;
+        mouseFollow.crosshair.SetActive(true);
+        roundStarted = true;
+        int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
+        int select = Random.Range(0, mediumEnemy.Length);      //selects ice or fire enemy
+        GameObject.Instantiate(mediumEnemy[select], mediumSpawnPoints[spawn].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+
+        int spawn2 = Random.Range(0, mediumSpawnPoints.Length);
+        int select2 = Random.Range(0, mediumEnemy.Length);
+        GameObject.Instantiate(mediumEnemy[select2], mediumSpawnPoints[spawn2].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        int spawn3 = Random.Range(0, mediumSpawnPoints.Length);
+        int select3 = Random.Range(0, mediumEnemy.Length);
+        GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+
+        int select10 = Random.Range(0, littleEnemy.Length);
+        GameObject.Instantiate(littleEnemy[select10], littleSpawnPoint.transform.position, Quaternion.identity);  //Spawnaa pieni vihollinen
+
+        int spawn4 = Random.Range(0, mediumSpawnPoints.Length);
+        int select4 = Random.Range(0, mediumEnemy.Length);
+        GameObject.Instantiate(mediumEnemy[select4], mediumSpawnPoints[spawn4].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select], mediumSpawnPoints[spawn].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select2], mediumSpawnPoints[spawn2].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select4], mediumSpawnPoints[spawn4].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(3);
+
+        int select8 = Random.Range(0, littleEnemy.Length);
+        GameObject.Instantiate(littleEnemy[select8], littleSpawnPoint.transform.position, Quaternion.identity);  //Spawnaa pieni vihollinen
+
+        int spawn5 = Random.Range(0, mediumSpawnPoints.Length);
+        int select5 = Random.Range(0, mediumEnemy.Length);
+        GameObject.Instantiate(mediumEnemy[select5], mediumSpawnPoints[spawn5].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        int spawn6 = Random.Range(0, mediumSpawnPoints.Length);
+        int select6 = Random.Range(0, mediumEnemy.Length);
+        GameObject.Instantiate(mediumEnemy[select6], mediumSpawnPoints[spawn6].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select2], mediumSpawnPoints[spawn2].transform.position, Quaternion.identity);
+
+        GameObject.Instantiate(mediumEnemy[select], mediumSpawnPoints[spawn].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        int select9 = Random.Range(0, littleEnemy.Length);
+        GameObject.Instantiate(littleEnemy[select9], littleSpawnPoint.transform.position, Quaternion.identity);
+
+        int spawn11 = Random.Range(0, mediumSpawnPoints.Length); 
+        int select11 = Random.Range(0, mediumEnemy.Length);      
+        GameObject.Instantiate(mediumEnemy[select11], mediumSpawnPoints[spawn11].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+
+        int spawn12 = Random.Range(0, mediumSpawnPoints.Length);
+        int select12 = Random.Range(0, mediumEnemy.Length);
+        GameObject.Instantiate(mediumEnemy[select12], mediumSpawnPoints[spawn12].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+
+
+        GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+
+        GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
 
     }
     #endregion

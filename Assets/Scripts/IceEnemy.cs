@@ -10,7 +10,7 @@ public class IceEnemy : MonoBehaviour
     public float speed = 0.7f;
     public Transform target;
     public float damage = 2;
-    public float maxHp = 7;
+    public float maxHp = 5;
     public float currentHp;
     public float takeDamage = 1;
     public float addPoints = 100;

@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
 {
     public static Score instance;
     public float currentScore;
+    public float loseScore = 10;
     public TMP_Text scoreText;
 
 
@@ -23,5 +24,12 @@ public class Score : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + currentScore.ToString();
+        currentScore -= loseScore*Time.deltaTime;
+
+        if(currentScore< 0)
+        {
+            currentScore = 0;
+        }
+        
     }
 }

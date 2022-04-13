@@ -39,5 +39,6 @@ public class Shop : MonoBehaviour
     public void NextWave()
     {
         enemySpawner.wave = enemySpawner.wave + 1;
+        enemySpawner.roundStarted = false;
     }
 }

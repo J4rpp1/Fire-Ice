@@ -129,7 +129,7 @@ MonoBehaviour:
   speed: 1
   target: {fileID: 0}
   damage: 2
-  maxHp: 10
+  maxHp: 5
   currentHp: 0
   takeDamage: 1
   addPoints: 100

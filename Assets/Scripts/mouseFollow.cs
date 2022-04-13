@@ -27,10 +27,14 @@ public class MouseFollow : MonoBehaviour
           mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
       transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);*/
 
-        if(hideCrosshair)
+       /* if(hideCrosshair)
         {
             crosshair.SetActive(false);
         }
+        if(hideCrosshair == false)
+        {
+            crosshair.SetActive(true);
+        }*/
 
     }
 }

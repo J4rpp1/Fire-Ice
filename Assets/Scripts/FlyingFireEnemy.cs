@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireEnemy : MonoBehaviour
+public class FlyingFireEnemy : MonoBehaviour
 {
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
-    public float speed = 0.7f;
+    public float speed = 0.4f;
     public Transform target;
-    public float damage = 2;
-    public float maxHp = 5;
+    public float damage = 10;
+    public float maxHp = 30;
     public float currentHp;
     public float takeDamage = 1;
-    public float addPoints = 100;
+    public float addPoints = 200;
     public int addToKills = 1;
 
 
@@ -36,6 +36,7 @@ public class FireEnemy : MonoBehaviour
         if (other.tag == "FireBullet")
         {
             currentHp = currentHp + takeDamage;
+
         }
         if (other.tag == "IceBullet")
         {
@@ -43,16 +44,16 @@ public class FireEnemy : MonoBehaviour
         }
 
     }
-  
+
     void Start()
     {
-        
+
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
 
-       
 
-        
+
+
     }
 
 
@@ -60,7 +61,7 @@ public class FireEnemy : MonoBehaviour
     {
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-       // Debug.Log(currentHp);
+        //Debug.Log(currentHp);
         if (currentHp > maxHp)
         {
             currentHp = maxHp;
@@ -71,13 +72,10 @@ public class FireEnemy : MonoBehaviour
             enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
             score.currentScore = score.currentScore + addPoints;
             Destroy(gameObject);
-
         }
 
-       
-    }
 
-   
+    }
     IEnumerator Damage()
     {
         while (true)
@@ -86,9 +84,8 @@ public class FireEnemy : MonoBehaviour
             playerHp.currentHp = playerHp.currentHp - damage;
             yield return new WaitForSeconds(1);
             // damaging = false;
-            Debug.Log("Loppu");
+
         }
 
     }
 }
-
