@@ -15,7 +15,7 @@ public class IceEnemy : MonoBehaviour
     public float takeDamage = 1;
     public float addPoints = 100;
     public int addToKills = 1;
-
+    private bool canDamage;
 
 
     private void Awake()
@@ -28,7 +28,7 @@ public class IceEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player" && canDamage)
         {
             //playerHp.currentHp -= Time.deltaTime * damage / 6f;
             StartCoroutine(Damage());
@@ -49,6 +49,7 @@ public class IceEnemy : MonoBehaviour
         
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
+        canDamage = true;
 
 
 
@@ -66,7 +67,7 @@ public class IceEnemy : MonoBehaviour
             currentHp = maxHp;
         }
 
-        if (currentHp == 0)
+        if (currentHp == 0 && canDamage)
         {
             enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
             score.currentScore = score.currentScore + addPoints;
@@ -77,15 +78,11 @@ public class IceEnemy : MonoBehaviour
     }
     IEnumerator Damage()
     {
-        while (true)
-        {
-            //damaging = true;
-            playerHp.currentHp = playerHp.currentHp - damage;
-            yield return new WaitForSeconds(1);
-            // damaging = false;
-            
-        }
-
+        enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
+        canDamage = false;
+        playerHp.currentHp = playerHp.currentHp - damage;
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }
 

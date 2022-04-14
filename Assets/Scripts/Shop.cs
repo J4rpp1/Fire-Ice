@@ -23,7 +23,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(bombs);
+        //Debug.Log(bombs);
     }
 
     public void BuyBomb()
@@ -40,5 +40,6 @@ public class Shop : MonoBehaviour
     {
         enemySpawner.wave = enemySpawner.wave + 1;
         enemySpawner.roundStarted = false;
+        enemySpawner.pause = false;
     }
 }

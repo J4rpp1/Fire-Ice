@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     public int bossesKilled;
     public bool enableBossText;
     public bool shopOpen;
+    public bool pause;
     public bool roundStarted;
 
 
@@ -70,6 +71,8 @@ public class EnemySpawner : MonoBehaviour
             mouseFollow.crosshair.SetActive(false);
             shopMenu.SetActive(true);
             Cursor.visible = true;
+            shopOpen = true;
+            pause = true;
             bossesKilled = 0;
         }
         if (wave == 2 && !roundStarted)
@@ -302,6 +305,7 @@ public class EnemySpawner : MonoBehaviour
     #endregion
     IEnumerator Boss()
     {
+        pause = true;
         enableBossText = false;
         bossText.text = "BOSS INCOMING";
         yield return new WaitForSeconds(1);
@@ -317,6 +321,7 @@ public class EnemySpawner : MonoBehaviour
         countText.text = "";
         enemiesKilled = 0;
         GameObject.Instantiate(bossEnemy, bossSpawnPoint.transform.position, Quaternion.identity);
+        pause = false;
     }
 
 }

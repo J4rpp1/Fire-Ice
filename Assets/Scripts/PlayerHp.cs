@@ -21,8 +21,10 @@ public class PlayerHp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentHp == 0)
+        Debug.Log(currentHp);
+        if (currentHp == 0)
         {
+            
             SceneManager.LoadScene(1);
         }
       //  Debug.Log(currentHp);

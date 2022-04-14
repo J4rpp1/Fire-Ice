@@ -5,14 +5,18 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
+    EnemySpawner enemySpawner;
     public static Score instance;
     public float currentScore;
-    public float loseScore = 10;
+    public int score;
+    public float loseScore = 5;
     public TMP_Text scoreText;
+    
 
 
     private void Awake()
     {
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         instance = this;
     }
     void Start()
@@ -23,8 +27,16 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + currentScore.ToString();
-        currentScore -= loseScore*Time.deltaTime;
+        scoreText.text = "Score: " + score.ToString();
+       
+        if(!enemySpawner.pause)
+        {
+            currentScore -= loseScore * Time.deltaTime;
+        }
+       
+        
+        
+        score = Mathf.RoundToInt(currentScore);
 
         if(currentScore< 0)
         {

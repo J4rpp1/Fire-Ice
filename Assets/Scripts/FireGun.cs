@@ -12,7 +12,7 @@ public class FireGun : MonoBehaviour
     public Transform shootPosition;
     public Transform target;
     Animator animator;
-
+    public AudioSource shootSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +39,7 @@ public class FireGun : MonoBehaviour
     IEnumerator FireRate()
     {
         canFire = false;
+        shootSound.Play();
         Rigidbody instantiatedProjectile = Instantiate(projectile, shootPosition.position, shootPosition.rotation) as Rigidbody;
         instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
         yield return new WaitForSeconds(fireRate);
