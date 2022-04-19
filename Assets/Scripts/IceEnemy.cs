@@ -9,7 +9,7 @@ public class IceEnemy : MonoBehaviour
     PlayerHp playerHp;
     public float speed = 0.7f;
     public Transform target;
-    public float damage = 2;
+    public int damage = 2;
     public float maxHp = 5;
     public float currentHp;
     public float takeDamage = 1;
@@ -41,6 +41,8 @@ public class IceEnemy : MonoBehaviour
         {
             currentHp = currentHp + takeDamage;
         }
+        if (other.tag == "Bomb")
+            currentHp = 0;
 
     }
 

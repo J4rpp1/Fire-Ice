@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   target: {fileID: 0}
-  damage: 2
+  damage: 1
   maxHp: 5
   currentHp: 0
   takeDamage: 1

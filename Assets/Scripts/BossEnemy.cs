@@ -10,7 +10,7 @@ public class BossEnemy : MonoBehaviour
     PlayerHp playerHp;
     public float speed = 0.3f;
     public Transform target;
-    public float damage = 5;
+    public int damage = 5;
     public float maxHp = 30;
     public float currentHp;
     public float takeDamage = 1;
@@ -64,7 +64,7 @@ public class BossEnemy : MonoBehaviour
         {
             currentHp = currentHp - takeDamage;
         }
-
+        
     }
 
     IEnumerator Damage()

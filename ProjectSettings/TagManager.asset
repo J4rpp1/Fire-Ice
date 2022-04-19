@@ -8,6 +8,7 @@ TagManager:
   - target
   - IceBullet
   - FireBullet
+  - Bomb
   layers:
   - Default
   - TransparentFX

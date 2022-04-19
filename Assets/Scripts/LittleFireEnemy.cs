@@ -9,7 +9,7 @@ public class LittleFireEnemy : MonoBehaviour
     PlayerHp playerHp;
     public float speed = 0.4f;
     public Transform target;
-    public float damage = 10;
+    public int damage = 10;
     public float maxHp = 30;
     public float currentHp;
     public float takeDamage = 1;
@@ -42,7 +42,8 @@ public class LittleFireEnemy : MonoBehaviour
         {
             currentHp = currentHp - takeDamage;
         }
-
+        if (other.tag == "Bomb")
+            currentHp = 0;
     }
 
     void Start()

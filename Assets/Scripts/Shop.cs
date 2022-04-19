@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public static Shop instance;
     EnemySpawner enemySpawner;
     Score score;
+    BombAttack bombAttack;
+    
 
-    public float bombs;
+
+    
 
     private void Awake()
     {
-       
+        instance = this;
+        bombAttack = FindObjectOfType<BombAttack>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         score = FindObjectOfType<Score>();
     }
@@ -23,7 +28,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(bombs);
+       
     }
 
     public void BuyBomb()
@@ -31,7 +36,7 @@ public class Shop : MonoBehaviour
         if(score.currentScore > 500)
         {
             score.currentScore = score.currentScore - 500;
-            bombs = bombs + 1;
+            bombAttack.bombCount = bombAttack.bombCount + 1;
         }
         
     }
