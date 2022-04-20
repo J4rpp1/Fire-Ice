@@ -15,11 +15,14 @@ public class PlayerHp : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+    public AudioSource hurtSound;
   
 
 
     private void Awake()
     {
+       
         instance = this;
         
          

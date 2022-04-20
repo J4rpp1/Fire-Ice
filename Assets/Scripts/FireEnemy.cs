@@ -83,6 +83,7 @@ public class FireEnemy : MonoBehaviour
     IEnumerator Damage()
     {
         enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
+        playerHp.hurtSound.Play();
         canDamage = false;
         playerHp.currentHp = playerHp.currentHp - damage;
         yield return new WaitForSeconds(0.1f);

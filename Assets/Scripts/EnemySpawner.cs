@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
 
-    MouseFollow mouseFollow;
+    FollowMouse followMouse;
     public TMP_Text bossText;
     public TMP_Text waveText;
     public TMP_Text countText;
@@ -34,12 +34,13 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        followMouse = FindObjectOfType<FollowMouse>();
     }
     void Start()
     {
         waveText.text = "Wave 1";
         wave = 1;
-        mouseFollow = FindObjectOfType<MouseFollow>();
+        
         Cursor.visible = false;
         enableBossText = true;
         StartCoroutine(Enemyspawner1());
@@ -68,7 +69,7 @@ public class EnemySpawner : MonoBehaviour
         {
             completedWave1 = true;
             enableBossText = true;
-            mouseFollow.crosshair.SetActive(false);
+            followMouse.crosshair.SetActive(false);
             shopMenu.SetActive(true);
             Cursor.visible = true;
             shopOpen = true;
@@ -156,7 +157,7 @@ public class EnemySpawner : MonoBehaviour
     {
         shopMenu.SetActive(false);
         Cursor.visible = false;
-        mouseFollow.crosshair.SetActive(true);
+        followMouse.crosshair.SetActive(true);
         roundStarted = true;
         int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
         int select = Random.Range(0, mediumEnemy.Length);      //selects ice or fire enemy
@@ -224,7 +225,7 @@ public class EnemySpawner : MonoBehaviour
     {
         shopMenu.SetActive(false);
         Cursor.visible = false;
-        mouseFollow.crosshair.SetActive(true);
+        followMouse.crosshair.SetActive(true);
         roundStarted = true;
         int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
         int select = Random.Range(0, mediumEnemy.Length);      //selects ice or fire enemy

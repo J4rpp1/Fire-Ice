@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BombAttack : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class BombAttack : MonoBehaviour
     public float speed;
     public Rigidbody projectile;
     public Transform shootPosition;
+    public TMP_Text bombText;
     void Start()
     {
         instance = this;
@@ -24,5 +26,7 @@ public class BombAttack : MonoBehaviour
             instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
             bombCount = bombCount - 1;
         }
+
+        bombText.text = "" + bombCount.ToString();
     }
 }

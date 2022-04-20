@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     public static Score instance;
     public float currentScore;
     public int score;
-    public float loseScore = 5;
+    public float loseScore = 4;
     public TMP_Text scoreText;
     
 

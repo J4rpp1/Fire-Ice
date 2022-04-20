@@ -1,12 +1,14 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class MouseFollow : MonoBehaviour
+public class FollowMouse : MonoBehaviour
 {
+
 
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
-    public static MouseFollow instance;
+    public static FollowMouse instance;
     public bool hideCrosshair;
     public GameObject crosshair;
 
@@ -27,14 +29,16 @@ public class MouseFollow : MonoBehaviour
           mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
       transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);*/
 
-       /* if(hideCrosshair)
-        {
-            crosshair.SetActive(false);
-        }
-        if(hideCrosshair == false)
-        {
-            crosshair.SetActive(true);
-        }*/
+        /* if(hideCrosshair)
+         {
+             crosshair.SetActive(false);
+         }
+         if(hideCrosshair == false)
+         {
+             crosshair.SetActive(true);
+         }*/
 
     }
 }
+
+

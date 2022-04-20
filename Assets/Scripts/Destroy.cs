@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Destroy : MonoBehaviour
 {
-    public GameObject explosion;
-    public Transform position;
-
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Explode());
+        StartCoroutine(DestroyThis());
     }
 
     // Update is called once per frame
@@ -19,10 +16,9 @@ public class Bomb : MonoBehaviour
         
     }
 
-    IEnumerator Explode()
+    IEnumerator DestroyThis()
     {
-        yield return new WaitForSeconds(0.7f);
-        Instantiate(explosion, position.position, position.rotation);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }

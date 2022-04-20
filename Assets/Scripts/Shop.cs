@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
     EnemySpawner enemySpawner;
     Score score;
     BombAttack bombAttack;
+    PlayerHp playerHp;
     
 
 
@@ -16,6 +17,7 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        playerHp = FindObjectOfType<PlayerHp>();
         bombAttack = FindObjectOfType<BombAttack>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         score = FindObjectOfType<Score>();
@@ -39,6 +41,16 @@ public class Shop : MonoBehaviour
             bombAttack.bombCount = bombAttack.bombCount + 1;
         }
         
+    }
+
+    public void BuyHp()
+    {
+        if (score.currentScore > 500 && playerHp.currentHp < 5)
+        {
+            score.currentScore = score.currentScore - 500;
+            playerHp.currentHp = playerHp.currentHp + 1;
+        }
+
     }
 
     public void NextWave()
