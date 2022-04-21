@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
 
+    PauseMenu pauseMenu;
     FollowMouse followMouse;
     public TMP_Text bossText;
     public TMP_Text waveText;
@@ -26,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     public int bossesKilled;
     public bool enableBossText;
     public bool shopOpen;
-    public bool pause;
+    
     public bool roundStarted;
 
 
@@ -37,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
     {
         instance = this;
         followMouse = FindObjectOfType<FollowMouse>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
     void Start()
     {
@@ -71,6 +73,7 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(Boss());
         }
 
+
         if (bossesKilled == 1)
         {
             completedWave1 = true;
@@ -79,7 +82,7 @@ public class EnemySpawner : MonoBehaviour
             shopMenu.SetActive(true);
             Cursor.visible = true;
             shopOpen = true;
-            pause = true;
+            pauseMenu.pause = true;
             bossesKilled = 0;
         }
         if (wave == 2 && !roundStarted)
@@ -331,7 +334,7 @@ public class EnemySpawner : MonoBehaviour
     #endregion
     IEnumerator Boss()
     {
-        pause = true;
+        pauseMenu.pause = true;
         enableBossText = false;
         bossText.text = "BOSS INCOMING";
         yield return new WaitForSeconds(1);
@@ -347,7 +350,7 @@ public class EnemySpawner : MonoBehaviour
         countText.text = "";
         enemiesKilled = 0;
         GameObject.Instantiate(bossEnemy, bossSpawnPoint.transform.position, Quaternion.identity);
-        pause = false;
+        pauseMenu.pause = false;
     }
 
 }

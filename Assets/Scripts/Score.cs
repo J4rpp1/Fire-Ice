@@ -5,7 +5,7 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    EnemySpawner enemySpawner;
+    PauseMenu pauseMenu;
     public static Score instance;
     public float currentScore;
     public int score;
@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
-        enemySpawner = FindObjectOfType<EnemySpawner>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
         instance = this;
     }
     void Start()
@@ -29,7 +29,7 @@ public class Score : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
        
-        if(!enemySpawner.pause)
+        if(!pauseMenu.pause)
         {
             currentScore -= loseScore * Time.deltaTime;
         }

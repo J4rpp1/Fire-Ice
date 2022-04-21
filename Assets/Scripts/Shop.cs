@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 {
     public static Shop instance;
     EnemySpawner enemySpawner;
+    PauseMenu pauseMenu;
     Score score;
     BombAttack bombAttack;
     PlayerHp playerHp;
@@ -21,6 +22,7 @@ public class Shop : MonoBehaviour
         bombAttack = FindObjectOfType<BombAttack>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         score = FindObjectOfType<Score>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
     void Start()
     {
@@ -57,6 +59,6 @@ public class Shop : MonoBehaviour
     {
         enemySpawner.wave = enemySpawner.wave + 1;
         enemySpawner.roundStarted = false;
-        enemySpawner.pause = false;
+        pauseMenu.pause = false;
     }
 }
