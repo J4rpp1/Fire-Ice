@@ -15,9 +15,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] mediumSpawnPoints;
     public GameObject bossSpawnPoint;
     public GameObject littleSpawnPoint;
+    public GameObject[] flyingSpawnPoints;
     public int selected;
     public GameObject[] mediumEnemy;
     public GameObject[] littleEnemy;
+    public GameObject[] flyingEnemy;
     public GameObject bossEnemy;
     public int wave;
     public int enemiesKilled;
@@ -59,11 +61,15 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(Boss());
         }
 
-        if (enemiesKilled == 20 && enableBossText && wave == 3)
+        if (enemiesKilled == 23 && enableBossText && wave == 3)
         {
             StartCoroutine(Boss());
         }
 
+        if (enemiesKilled == 30 && enableBossText && wave == 4)
+        {
+            StartCoroutine(Boss());
+        }
 
         if (bossesKilled == 1)
         {
@@ -100,6 +106,8 @@ public class EnemySpawner : MonoBehaviour
     }
 
     #region Wave system
+
+    //wave 1
     IEnumerator Enemyspawner1()
     {
         int spawn = Random.Range(0, mediumSpawnPoints.Length); //sets random spawn point
@@ -153,6 +161,7 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
+    //wave 2
     IEnumerator Enemyspawner2()
     {
         shopMenu.SetActive(false);
@@ -221,6 +230,7 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
+    //wave 3
     IEnumerator Enemyspawner3()
     {
         shopMenu.SetActive(false);
@@ -235,6 +245,11 @@ public class EnemySpawner : MonoBehaviour
         int spawn2 = Random.Range(0, mediumSpawnPoints.Length);
         int select2 = Random.Range(0, mediumEnemy.Length);
         GameObject.Instantiate(mediumEnemy[select2], mediumSpawnPoints[spawn2].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+
+        int spawnF = Random.Range(0, flyingSpawnPoints.Length);
+        int selectF = Random.Range(0, flyingEnemy.Length);
+        GameObject.Instantiate(flyingEnemy[selectF], flyingSpawnPoints[spawnF].transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
 
         int spawn3 = Random.Range(0, mediumSpawnPoints.Length);
@@ -255,6 +270,16 @@ public class EnemySpawner : MonoBehaviour
 
         GameObject.Instantiate(mediumEnemy[select3], mediumSpawnPoints[spawn3].transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
+
+        int spawnF2 = Random.Range(0, flyingSpawnPoints.Length);
+        int selectF2 = Random.Range(0, flyingEnemy.Length);
+        GameObject.Instantiate(flyingEnemy[selectF2], flyingSpawnPoints[spawnF2].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.3f);
+
+        int spawnF3 = Random.Range(0, flyingSpawnPoints.Length);
+        int selectF3 = Random.Range(0, flyingEnemy.Length);
+        GameObject.Instantiate(flyingEnemy[selectF3], flyingSpawnPoints[spawnF3].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.3f);
 
         GameObject.Instantiate(mediumEnemy[select2], mediumSpawnPoints[spawn2].transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
