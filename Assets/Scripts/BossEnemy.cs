@@ -10,13 +10,13 @@ public class BossEnemy : MonoBehaviour
     PlayerHp playerHp;
     public float speed = 0.3f;
     public Transform target;
-    public int damage = 5;
+    public int damage = 1;
     public float maxHp = 30;
     public float currentHp;
-    public float takeDamage = 1;
+    public float takeDamage = 5;
     public float addPoints = 1000;
     public int addToKills = 1;
-
+    public bool damaging;
     private void Awake()
     {
         playerHp = FindObjectOfType<PlayerHp>();
@@ -40,7 +40,7 @@ public class BossEnemy : MonoBehaviour
             currentHp = maxHp;
         }
 
-        if (currentHp == 0)
+        if (currentHp< 0)
         {
             enemySpawner.bossesKilled = enemySpawner.bossesKilled + addToKills;
             score.currentScore = score.currentScore + addPoints;
@@ -51,7 +51,7 @@ public class BossEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player" && !damaging)
         {
             //playerHp.currentHp -= Time.deltaTime * damage / 6f;
             StartCoroutine(Damage());
@@ -72,10 +72,11 @@ public class BossEnemy : MonoBehaviour
     {
         while (true)
         {
-            //damaging = true;
+            Debug.Log("Perse");
+            damaging = true;
             playerHp.currentHp = playerHp.currentHp - damage;
             yield return new WaitForSeconds(1);
-            // damaging = false;
+            damaging = false;
 
         }
 

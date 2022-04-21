@@ -50,7 +50,7 @@ public class FlyingFireEnemy : MonoBehaviour
     void Start()
     {
 
-        target = GameObject.FindWithTag("target").transform;
+        target = GameObject.FindWithTag("FlyingTarget").transform;
         currentHp = maxHp;
 
 
