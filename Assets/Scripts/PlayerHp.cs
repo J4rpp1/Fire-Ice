@@ -40,7 +40,7 @@ public class PlayerHp : MonoBehaviour
             currentHp = numOfHearts;
         }
 
-        if (currentHp == 0)
+        if (currentHp < 0)
         {
 
             SceneManager.LoadScene(1);
