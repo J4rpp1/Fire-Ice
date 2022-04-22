@@ -12,6 +12,7 @@ public class PlayerHp : MonoBehaviour
     public int maxHp = 10;
     public int numOfHearts;
 
+    Score score;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -29,7 +30,9 @@ public class PlayerHp : MonoBehaviour
     }
     void Start()
     {
+        score = FindObjectOfType<Score>();
         currentHp = maxHp;
+        
     }
 
     // Update is called once per frame
@@ -40,9 +43,18 @@ public class PlayerHp : MonoBehaviour
             currentHp = numOfHearts;
         }
 
-        if (currentHp < 0)
+        if (currentHp < 1)
         {
-
+            if(score.score > score.highScore)
+            {
+                PlayerPrefs.SetInt("highScore", score.score);
+                PlayerPrefs.SetInt("lastScore", score.score);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("lastScore", score.score);
+            }
+            
             SceneManager.LoadScene(1);
         }
 
@@ -67,11 +79,11 @@ public class PlayerHp : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-        if (currentHp == 0)
+       /* if (currentHp == 0)
         {
             
             SceneManager.LoadScene(1);
-        }
+        }*/
 
 
       //  Debug.Log(currentHp);

@@ -9,19 +9,26 @@ public class EnemySpawner : MonoBehaviour
 
     PauseMenu pauseMenu;
     FollowMouse followMouse;
+
+    public AudioSource mainTheme;
+    public AudioSource bossTheme;
+
     public TMP_Text bossText;
     public TMP_Text waveText;
     public TMP_Text countText;
+
     public GameObject shopMenu;
     public GameObject[] mediumSpawnPoints;
     public GameObject bossSpawnPoint;
     public GameObject littleSpawnPoint;
     public GameObject[] flyingSpawnPoints;
     public int selected;
+
     public GameObject[] mediumEnemy;
     public GameObject[] littleEnemy;
     public GameObject[] flyingEnemy;
     public GameObject bossEnemy;
+
     public int wave;
     public int enemiesKilled;
     public int bossesKilled;
@@ -42,6 +49,8 @@ public class EnemySpawner : MonoBehaviour
     }
     void Start()
     {
+        Time.timeScale = 1;
+        mainTheme.Play();
         waveText.text = "Wave 1";
         wave = 1;
         
@@ -76,6 +85,8 @@ public class EnemySpawner : MonoBehaviour
 
         if (bossesKilled == 1)
         {
+            bossTheme.Stop();
+            mainTheme.Play();
             completedWave1 = true;
             enableBossText = true;
             followMouse.crosshair.SetActive(false);
@@ -334,6 +345,8 @@ public class EnemySpawner : MonoBehaviour
     #endregion
     IEnumerator Boss()
     {
+        mainTheme.Pause();
+        bossTheme.Play();
         pauseMenu.pause = true;
         enableBossText = false;
         bossText.text = "BOSS INCOMING";

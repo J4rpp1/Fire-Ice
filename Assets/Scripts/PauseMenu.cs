@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUi;
+    
     public bool pause;
     void Start()
     {
+       
         pause = false;
         pauseMenuUi.SetActive(false);
     }
@@ -15,23 +17,28 @@ public class PauseMenu : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !pause)
         {
             pauseMenuUi.SetActive(true);
             pause = true;
+            
             Time.timeScale = 0;
         }
+
+     
     }
 
     public void Resume()
     {
         pauseMenuUi.SetActive(false);
         pause = false;
+        
         Time.timeScale = 1;
     }
 
     public void Quit()
     {
+        SceneManager.LoadScene(2);
         
     }
 }

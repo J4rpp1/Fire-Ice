@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6620212410069686743}
   - component: {fileID: 168421946838640220}
   - component: {fileID: 8037562139359878313}
-  - component: {fileID: 6961646692173522433}
   - component: {fileID: -3842590376917769806}
   - component: {fileID: 777415260897248476}
+  - component: {fileID: 5959903254477368218}
   m_Layer: 0
   m_Name: FlyingIceEnemy
   m_TagString: Untagged
@@ -98,26 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6961646692173522433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6659926125263150935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b431d28e91bbb004aa6c88a31087646b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  target: {fileID: 0}
-  damage: 1
-  maxHp: 2
-  currentHp: 0
-  takeDamage: 1
-  addPoints: 200
-  addToKills: 1
 --- !u!54 &-3842590376917769806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,3 +127,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5959903254477368218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659926125263150935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d1fab100dfcb54fb58006dfcffefbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFireEnemy: 0
+  isFlyingEnemy: 1
+  speed: 1.3
+  target: {fileID: 0}
+  damage: 1
+  maxHp: 2
+  currentHp: 0
+  takeDamage: 1
+  addPoints: 100
+  addToKills: 1

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 228854815165494423}
   - component: {fileID: -2852302798736608739}
   - component: {fileID: 5758552122183398740}
-  - component: {fileID: 3249643458932100346}
+  - component: {fileID: 8760096656517140640}
   m_Layer: 0
   m_Name: Little Fire Enemy
   m_TagString: Untagged
@@ -127,7 +127,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3249643458932100346
+--- !u!114 &8760096656517140640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,14 +136,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6492992145747641400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd2cf0e658004b4eb95130f1a0ce070, type: 3}
+  m_Script: {fileID: 11500000, guid: 94d1fab100dfcb54fb58006dfcffefbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  isFireEnemy: 1
+  isFlyingEnemy: 0
+  speed: 0.4
   target: {fileID: 0}
-  damage: 10
+  damage: 5
   maxHp: 10
   currentHp: 0
   takeDamage: 1
-  addPoints: 200
+  addPoints: 100
   addToKills: 1
