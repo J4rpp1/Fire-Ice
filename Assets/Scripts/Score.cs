@@ -9,8 +9,10 @@ public class Score : MonoBehaviour
     public static Score instance;
     public float currentScore;
     public int score;
+    public int highScore;
     public float loseScore = 4;
     public TMP_Text scoreText;
+
     
 
 
@@ -22,6 +24,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         currentScore = 0;
+        highScore = PlayerPrefs.GetInt("highScore");
     }
 
     // Update is called once per frame

@@ -6,6 +6,7 @@ public class FireGun : MonoBehaviour
 {
 
     public Rigidbody projectile;
+    PauseMenu pauseMenu;
     public float speed = 20;
     public float fireRate = 0.2f;
     [HideInInspector] public bool canFire;
@@ -17,6 +18,7 @@ public class FireGun : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        pauseMenu = GetComponent<PauseMenu>();
         canFire = true;
     }
 

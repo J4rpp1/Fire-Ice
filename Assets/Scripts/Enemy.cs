@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireEnemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+    public bool isFireEnemy;
+    public bool isFlyingEnemy;
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
@@ -18,6 +20,7 @@ public class FireEnemy : MonoBehaviour
     private bool canDamage;
 
 
+
     private void Awake()
     {
         playerHp = FindObjectOfType<PlayerHp>();
@@ -26,35 +29,66 @@ public class FireEnemy : MonoBehaviour
     }
 
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player" && canDamage)
+        if (isFireEnemy)
         {
-            //playerHp.currentHp -= Time.deltaTime * damage / 6f;
-            StartCoroutine(Damage());
+            if (other.name == "Player" && canDamage)
+            {
+                //playerHp.currentHp -= Time.deltaTime * damage / 6f;
+                StartCoroutine(Damage());
+            }
+            if (other.tag == "FireBullet")
+            {
+                currentHp = currentHp + takeDamage;
+            }
+            if (other.tag == "IceBullet")
+            {
+                currentHp = currentHp - takeDamage;
+            }
         }
-        if (other.tag == "FireBullet")
+
+        if (!isFireEnemy)
         {
-            currentHp = currentHp + takeDamage;
+            if (other.name == "Player" && canDamage)
+            {
+                //playerHp.currentHp -= Time.deltaTime * damage / 6f;
+                StartCoroutine(Damage());
+            }
+            if (other.tag == "FireBullet")
+            {
+                currentHp = currentHp - takeDamage;
+            }
+            if (other.tag == "IceBullet")
+            {
+                currentHp = currentHp + takeDamage;
+            }
         }
-        if (other.tag == "IceBullet")
-        {
-            currentHp = currentHp - takeDamage;
-        }
+
         if (other.tag == "Bomb")
             currentHp = 0;
 
     }
-  
+
     void Start()
     {
         canDamage = true;
-        target = GameObject.FindWithTag("target").transform;
+        if(isFlyingEnemy)
+        {
+            target = GameObject.FindWithTag("FlyingTarget").transform;
+        }
+        else
+        {
+            target = GameObject.FindWithTag("target").transform;
+           
+        }
+        
         currentHp = maxHp;
 
-       
 
-        
+
+
     }
 
 
@@ -62,7 +96,7 @@ public class FireEnemy : MonoBehaviour
     {
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-       // Debug.Log(currentHp);
+        // Debug.Log(currentHp);
         if (currentHp > maxHp)
         {
             currentHp = maxHp;
@@ -76,10 +110,10 @@ public class FireEnemy : MonoBehaviour
 
         }
 
-       
+
     }
 
-   
+
     IEnumerator Damage()
     {
         enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
@@ -91,4 +125,3 @@ public class FireEnemy : MonoBehaviour
 
     }
 }
-

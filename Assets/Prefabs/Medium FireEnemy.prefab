@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3630805107547516518}
   - component: {fileID: 3630805107547516517}
   - component: {fileID: 270734025088588117}
-  - component: {fileID: 3930269338120858195}
   - component: {fileID: 1691287023508662555}
+  - component: {fileID: 5899091460789263217}
   m_Layer: 0
   m_Name: Medium FireEnemy
   m_TagString: Untagged
@@ -114,26 +114,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3930269338120858195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3630805107547516516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94259bc20ffab8e48971fa51bbc0a4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  target: {fileID: 0}
-  damage: 1
-  maxHp: 5
-  currentHp: 0
-  takeDamage: 1
-  addPoints: 100
-  addToKills: 1
 --- !u!65 &1691287023508662555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,3 +127,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.8264136}
   m_Center: {x: 0, y: 0, z: 1.126747}
+--- !u!114 &5899091460789263217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630805107547516516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d1fab100dfcb54fb58006dfcffefbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFireEnemy: 1
+  isFlyingEnemy: 0
+  speed: 0.7
+  target: {fileID: 0}
+  damage: 1
+  maxHp: 5
+  currentHp: 0
+  takeDamage: 1
+  addPoints: 100
+  addToKills: 1
