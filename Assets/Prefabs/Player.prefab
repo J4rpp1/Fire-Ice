@@ -2283,6 +2283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: 0
   score: 0
+  highScore: 0
   loseScore: 4
   scoreText: {fileID: 46936092304767866}
 --- !u!1 &5474386349701295844
@@ -2679,7 +2680,7 @@ AudioSource:
   m_GameObject: {fileID: 8273375352382826311}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0c0badac868053c4486b61c47a6bab5e, type: 2}
   m_audioClip: {fileID: 8300000, guid: f64c632bab5d9a847b5a06d22cdc07dc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
