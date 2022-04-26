@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d1fab100dfcb54fb58006dfcffefbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
+  blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
   isFireEnemy: 0
   isFlyingEnemy: 0
   speed: 0.7
