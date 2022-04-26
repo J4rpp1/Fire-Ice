@@ -23,7 +23,7 @@ public class Bomb : MonoBehaviour
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(0.7f);
-		AudioSource.PlayClipAtPoint(bombClip, Camera.main.transform.position);
+		SFX.instance.PlayClip(bombClip, 1f);
         Instantiate(explosion, position.position, position.rotation);
         Destroy(gameObject);
     }
