@@ -6,9 +6,12 @@ public class Enemy : MonoBehaviour
 {
 	[SerializeField] AudioClip hurtSound;
 	[SerializeField] AudioClip blockSound;
+
+	public GameObject deadEnemy;
 	public bool isFireEnemy;
 	public bool isFlyingEnemy;
 	EnemySpawner enemySpawner;
+	public Transform position;
 	Score score;
 	PlayerHp playerHp;
 	public float speed = 0.7f;
@@ -110,6 +113,7 @@ public class Enemy : MonoBehaviour
 		{
 			enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
 			score.currentScore = score.currentScore + addPoints;
+			Instantiate(deadEnemy, position.position, position.rotation);
 			Destroy(gameObject);
 
 		}
@@ -137,6 +141,7 @@ public class Enemy : MonoBehaviour
 		canDamage = false;
 		playerHp.currentHp = playerHp.currentHp - damage;
 		yield return new WaitForSeconds(0.1f);
+		
 		Destroy(gameObject);
 
 	}

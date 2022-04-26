@@ -18,7 +18,7 @@ public class FireGun : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        pauseMenu = GetComponent<PauseMenu>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
         canFire = true;
     }
 
@@ -31,7 +31,7 @@ public class FireGun : MonoBehaviour
         Debug.DrawRay(transform.position, newDirection, Color.red);
         transform.rotation = Quaternion.LookRotation(newDirection);
 
-        if (Input.GetButton("Fire1") && canFire)
+        if (Input.GetButton("Fire1") && canFire && !pauseMenu.pause)
         {
             animator.SetTrigger("Shoot");
             StartCoroutine(FireRate());

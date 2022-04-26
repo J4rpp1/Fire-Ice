@@ -141,8 +141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
   blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
+  deadEnemy: {fileID: 1259825857152785913, guid: ee1d2c4dec8c95a48ae8306c93159d29, type: 3}
   isFireEnemy: 1
   isFlyingEnemy: 0
+  position: {fileID: 3630805107547516520}
   speed: 0.7
   target: {fileID: 0}
   damage: 1

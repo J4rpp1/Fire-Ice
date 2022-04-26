@@ -3933,6 +3933,14 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1126019921}
+    - target: {fileID: 1807846877, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.000061035
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807846877, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
+      objectReference: {fileID: 0}
     - target: {fileID: 1176452244386838353, guid: 1a7a0705dd51d474680e2b1164d252f4, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
