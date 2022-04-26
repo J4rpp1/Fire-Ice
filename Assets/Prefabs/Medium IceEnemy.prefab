@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3630805107547516517}
   - component: {fileID: 270734025088588117}
   - component: {fileID: 8317223421596475559}
+  - component: {fileID: 278190136938388732}
   m_Layer: 0
   m_Name: Medium IceEnemy
   m_TagString: Untagged
@@ -140,6 +141,19 @@ MonoBehaviour:
   takeDamage: 1
   addPoints: 100
   addToKills: 1
+--- !u!65 &278190136938388732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630805107547516516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.75, y: 2.56, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &986492195510907724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,6 +161,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3630805107547516520}
     m_Modifications:
+    - target: {fileID: 211062898912394601, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 211062898912394601, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 211062898912394601, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 211062898912394601, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 211062898912394601, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1580813605574416431, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
       propertyPath: m_Name
       value: IceBasicEnemy1
