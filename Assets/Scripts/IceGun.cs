@@ -6,17 +6,19 @@ public class IceGun : MonoBehaviour
 {
 
     public Rigidbody projectile;
+    PauseMenu pauseMenu;
     public float speed = 20;
     public float fireRate = 0.2f;
     [HideInInspector] public bool canFire;
     public Transform shootPosition;
     public Transform target;
     Animator animator;
-    public AudioSource shootSound;
+	public AudioClip shootSoundClip;
 
     // Start is called before the first frame update
     void Start()
     {
+        pauseMenu = FindObjectOfType<PauseMenu>();
         animator = GetComponentInChildren<Animator>();
         canFire = true;
     }
@@ -31,7 +33,7 @@ public class IceGun : MonoBehaviour
         Debug.DrawRay(transform.position, newDirection, Color.red);
         transform.rotation = Quaternion.LookRotation(newDirection);
 
-        if (Input.GetButton("Fire2") && canFire)
+        if (Input.GetButton("Fire2") && canFire && !pauseMenu.pause)
         {
             animator.SetTrigger("Shoot");
             StartCoroutine(FireRate());
@@ -43,7 +45,7 @@ public class IceGun : MonoBehaviour
     IEnumerator FireRate()
     {
         canFire = false;
-        shootSound.Play();
+        SFX.instance.PlayClip(shootSoundClip, 1f);
         Rigidbody instantiatedProjectile = Instantiate(projectile, shootPosition.position, shootPosition.rotation) as Rigidbody;
         instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
         yield return new WaitForSeconds(fireRate);

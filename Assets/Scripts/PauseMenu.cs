@@ -5,20 +5,25 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUi;
-    
+    public static PauseMenu instance;
     public bool pause;
     void Start()
     {
-       
+        
         pause = false;
         pauseMenuUi.SetActive(false);
     }
+    private void Awake()
+    {
+        instance = this;
+    }
 
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !pause)
         {
+            Cursor.visible = true;
             pauseMenuUi.SetActive(true);
             pause = true;
             
@@ -32,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUi.SetActive(false);
         pause = false;
-        
+        Cursor.visible = false;
         Time.timeScale = 1;
     }
 

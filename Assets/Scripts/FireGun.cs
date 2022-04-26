@@ -13,12 +13,12 @@ public class FireGun : MonoBehaviour
     public Transform shootPosition;
     public Transform target;
     Animator animator;
-    public AudioSource shootSound;
+	public AudioClip shootSoundClip;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        pauseMenu = GetComponent<PauseMenu>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
         canFire = true;
     }
 
@@ -31,7 +31,7 @@ public class FireGun : MonoBehaviour
         Debug.DrawRay(transform.position, newDirection, Color.red);
         transform.rotation = Quaternion.LookRotation(newDirection);
 
-        if (Input.GetButton("Fire1") && canFire)
+        if (Input.GetButton("Fire1") && canFire && !pauseMenu.pause)
         {
             animator.SetTrigger("Shoot");
             StartCoroutine(FireRate());
@@ -41,7 +41,7 @@ public class FireGun : MonoBehaviour
     IEnumerator FireRate()
     {
         canFire = false;
-        shootSound.Play();
+		SFX.instance.PlayClip(shootSoundClip, 1f);
         Rigidbody instantiatedProjectile = Instantiate(projectile, shootPosition.position, shootPosition.rotation) as Rigidbody;
         instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
         yield return new WaitForSeconds(fireRate);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
+	[SerializeField] AudioClip bombClip;
     public GameObject explosion;
     public Transform position;
 
@@ -22,6 +23,7 @@ public class Bomb : MonoBehaviour
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(0.7f);
+		SFX.instance.PlayClip(bombClip, 1f);
         Instantiate(explosion, position.position, position.rotation);
         Destroy(gameObject);
     }

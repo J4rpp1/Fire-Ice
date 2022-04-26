@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float destroyIn = 1;
     void Start()
     {
         StartCoroutine(DestroyThis());
@@ -18,7 +18,7 @@ public class Destroy : MonoBehaviour
 
     IEnumerator DestroyThis()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(destroyIn);
         Destroy(gameObject);
     }
 }
