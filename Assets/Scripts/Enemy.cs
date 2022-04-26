@@ -121,12 +121,12 @@ public class Enemy : MonoBehaviour
 	{
 		if (hurt)
 		{
-			AudioSource.PlayClipAtPoint(hurtSound, transform.position);
+			AudioSource.PlayClipAtPoint(hurtSound, soundPosition);
 			currentHp = currentHp - takeDamage;
 		}
 		else
 		{
-			AudioSource.PlayClipAtPoint(blockSound, transform.position);
+			AudioSource.PlayClipAtPoint(blockSound, soundPosition);
 			currentHp = currentHp + takeDamage;
 		}
 	}
