@@ -111,5 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd430914d4890348947bb24bfb6456e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombClip: {fileID: 8300000, guid: cf533e5b29a8acd44b8efe9cb223b4d6, type: 3}
   explosion: {fileID: 4480775299510912739, guid: 35adb3f1b3a81ac46a20342627be2814, type: 3}
   position: {fileID: 4360948289471795}
