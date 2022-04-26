@@ -3543,7 +3543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb2706585d408945a2f992cf2515de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombCount: 10
+  bombCount: 1
   speed: 12
   projectile: {fileID: 1301621892665407996, guid: 39dd13dbaa9c8be4286ef646e0f150c8, type: 3}
   shootPosition: {fileID: 2074429666801484441}

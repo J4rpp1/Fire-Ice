@@ -37,9 +37,9 @@ public class Shop : MonoBehaviour
 
     public void BuyBomb()
     {
-        if(score.currentScore > 500)
+        if(score.currentScore > 2000)
         {
-            score.currentScore = score.currentScore - 500;
+            score.currentScore = score.currentScore - 2000;
             bombAttack.bombCount = bombAttack.bombCount + 1;
         }
         
@@ -47,9 +47,9 @@ public class Shop : MonoBehaviour
 
     public void BuyHp()
     {
-        if (score.currentScore > 500 && playerHp.currentHp < 5)
+        if (score.currentScore > 2000 && playerHp.currentHp < 5)
         {
-            score.currentScore = score.currentScore - 500;
+            score.currentScore = score.currentScore - 2000;
             playerHp.currentHp = playerHp.currentHp + 1;
         }
 
