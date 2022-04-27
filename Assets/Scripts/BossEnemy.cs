@@ -8,6 +8,7 @@ public class BossEnemy : MonoBehaviour
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
+    public static BossEnemy instance;
     public float speed = 0.3f;
     public Transform target;
     public int damage = 1;
@@ -17,8 +18,10 @@ public class BossEnemy : MonoBehaviour
     public float addPoints = 1000;
     public int addToKills = 1;
     public bool damaging;
+    public int handsBroken;
     private void Awake()
     {
+        instance = this;
         playerHp = FindObjectOfType<PlayerHp>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         score = FindObjectOfType<Score>();
@@ -39,13 +42,16 @@ public class BossEnemy : MonoBehaviour
         {
             currentHp = maxHp;
         }
-
-        if (currentHp< 0)
+        if (handsBroken == 2)
+        {
+            Debug.Log("käsirauvat");
+        }
+        /*if (currentHp< 0)
         {
             enemySpawner.bossesKilled = enemySpawner.bossesKilled + addToKills;
             score.currentScore = score.currentScore + addPoints;
             Destroy(gameObject);
-        }
+        }*/
 
     }
 
