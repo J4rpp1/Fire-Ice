@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceBasicEnemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 1620500030328486633, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4456594421295245474, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -240,6 +244,14 @@ PrefabInstance:
     - target: {fileID: 4456594421295245474, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752752385630442028, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888073857147223154, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1d847d239c6a314b8cd07f8e11f1d75, type: 3}

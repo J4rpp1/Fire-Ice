@@ -169,6 +169,10 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Center.y
       value: 0.018229485
       objectReference: {fileID: 0}
+    - target: {fileID: 2267899712597813477, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5738855563918340779, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -0.056149006
@@ -245,9 +249,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6358684686915848258, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6470409838121259782, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: -0.015494943
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115338648147440849, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122736487470273189, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Name
