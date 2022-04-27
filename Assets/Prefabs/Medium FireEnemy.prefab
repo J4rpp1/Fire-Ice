@@ -161,6 +161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3630805107547516520}
     m_Modifications:
+    - target: {fileID: 755000684577595578, guid: 9605bde93241d984a8c66acb8e7403b3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3626958155723823307, guid: 9605bde93241d984a8c66acb8e7403b3, type: 3}
       propertyPath: m_Name
       value: FireBasicEnemy1
@@ -220,6 +224,14 @@ PrefabInstance:
     - target: {fileID: 3626958155723823308, guid: 9605bde93241d984a8c66acb8e7403b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477808848449888941, guid: 9605bde93241d984a8c66acb8e7403b3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984766296021593631, guid: 9605bde93241d984a8c66acb8e7403b3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9605bde93241d984a8c66acb8e7403b3, type: 3}

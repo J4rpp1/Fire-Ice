@@ -161,9 +161,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1475917044050905160}
     m_Modifications:
+    - target: {fileID: 802268346485971959, guid: cf8fd9195fd8e1646ae8bd67c3adee7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4891008279501443758, guid: cf8fd9195fd8e1646ae8bd67c3adee7b, type: 3}
       propertyPath: m_Name
       value: FireLittleShit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660120590668742330, guid: cf8fd9195fd8e1646ae8bd67c3adee7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8257940211673286193, guid: cf8fd9195fd8e1646ae8bd67c3adee7b, type: 3}
       propertyPath: m_RootOrder
