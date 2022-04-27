@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9128758661714178680}
-  - component: {fileID: 5188942721640480263}
+  - component: {fileID: 8965893937979812855}
   m_Layer: 0
   m_Name: bossall
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 7547488708454242770}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5188942721640480263
+--- !u!95 &8965893937979812855
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 70975506449086549}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4ac1745e82198647a65523cae1f8f22, type: 2}
+  m_Controller: {fileID: 9100000, guid: e348a8f02a8a32140896a381d8c28b71, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
