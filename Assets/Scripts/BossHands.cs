@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossHands : MonoBehaviour
 {
+	[SerializeField] AudioClip hurtSound;
+	[SerializeField] AudioClip blockSound;
 	BossEnemy bossEnemy;
     public bool isFireHand;
 	public float takeDamage;
@@ -67,12 +69,12 @@ public class BossHands : MonoBehaviour
 	{
 		if (hurt)
 		{
-			//SFX.instance.PlayClip(hurtSound, 1f);
+			SFX.instance.PlayClip(hurtSound, 1f);
 			currentHp = currentHp - takeDamage;
 		}
 		else
 		{
-			//SFX.instance.PlayClip(blockSound, 1f);
+			SFX.instance.PlayClip(blockSound, 1f);
 			currentHp = currentHp + takeDamage;
 		}
 	}

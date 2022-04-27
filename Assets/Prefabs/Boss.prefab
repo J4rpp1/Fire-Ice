@@ -396,6 +396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44dfec950d1ee44292c6f857338ffdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
+  blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
   isFireHand: 1
   takeDamage: 1
   currentHp: 0
@@ -771,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624f53aa9deacf64b8757af60ad1e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.4
+  speed: 0.2
   target: {fileID: 0}
   damage: 5
   maxHp: 30
@@ -1158,6 +1160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44dfec950d1ee44292c6f857338ffdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
+  blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
   isFireHand: 0
   takeDamage: 1
   currentHp: 0
