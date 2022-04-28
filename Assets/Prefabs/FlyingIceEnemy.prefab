@@ -112,7 +112,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &777415260897248476
@@ -140,8 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d1fab100dfcb54fb58006dfcffefbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtSound: {fileID: 0}
-  blockSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
+  blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
+  deathSound: {fileID: 8300000, guid: 17f39025fb6322e40b7166cc39f02266, type: 3}
   deadEnemy: {fileID: 6659926125263150935, guid: 13e0dda2eeacbc4428394a105e3cbf14, type: 3}
   isFireEnemy: 0
   isFlyingEnemy: 1
