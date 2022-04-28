@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 	[SerializeField] AudioClip hurtSound;
 	[SerializeField] AudioClip blockSound;
+	[SerializeField] AudioClip deathSound;
 
 	public GameObject deadEnemy;
 	public bool isFireEnemy;
@@ -37,15 +38,10 @@ public class Enemy : MonoBehaviour
 
 
 
-	private void OnTriggerEnter(Collider other)
+	private void OnColliderEnter(Collider other)
 	{
 		if (isFireEnemy)
 		{
-			if (other.name == "Player" && canDamage)
-			{
-				//playerHp.currentHp -= Time.deltaTime * damage / 6f;
-				StartCoroutine(Damage());
-			}
 			if (other.tag == "FireBullet")
 			{
 				EnemyHurt(false);
@@ -58,11 +54,6 @@ public class Enemy : MonoBehaviour
 
 		if (!isFireEnemy)
 		{
-			if (other.name == "Player" && canDamage)
-			{
-				//playerHp.currentHp -= Time.deltaTime * damage / 6f;
-				StartCoroutine(Damage());
-			}
 			if (other.tag == "FireBullet")
 			{
 				EnemyHurt(true);
@@ -77,7 +68,11 @@ public class Enemy : MonoBehaviour
 			currentHp = 0;
 
 	}
-
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.name == "Player" && canDamage)
+			StartCoroutine(Damage());
+	}
 	void Start()
 	{
 		canDamage = true;
@@ -111,11 +106,7 @@ public class Enemy : MonoBehaviour
 
 		if (currentHp == 0 && canDamage)
 		{
-			enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
-			score.currentScore = score.currentScore + addPoints;
-			Instantiate(deadEnemy, position.position, position.rotation);
-			Destroy(gameObject);
-
+			EnemyDie();
 		}
 
 
@@ -133,6 +124,15 @@ public class Enemy : MonoBehaviour
 			SFX.instance.PlayClip(blockSound, 1f);
 			currentHp = currentHp + takeDamage;
 		}
+	}
+
+	void EnemyDie()
+	{
+		enemySpawner.enemiesKilled = enemySpawner.enemiesKilled + addToKills;
+		score.currentScore = score.currentScore + addPoints;
+		SFX.instance.PlayClip(deathSound, 1f);
+		Instantiate(deadEnemy, position.position, position.rotation);
+		Destroy(gameObject);
 	}
 	IEnumerator Damage()
 	{
