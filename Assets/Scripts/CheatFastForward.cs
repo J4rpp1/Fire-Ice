@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FastForward : MonoBehaviour
+public class CheatFastForward : MonoBehaviour
 {
 	[SerializeField] float timeToSkip = 1;
 	[SerializeField] float skipSpeed = 5;
