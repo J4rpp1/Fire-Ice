@@ -87,21 +87,31 @@ public class EnemySpawner : MonoBehaviour
         {
             StartCoroutine(Boss());
         }
-        
+
+        if (enemiesKilled == 62 && enableBossText && wave == 6)
+        {
+            StartCoroutine(Boss());
+        }
+
+        if (enemiesKilled == 70 && enableBossText && wave == 7)
+        {
+            StartCoroutine(Boss());
+        }
+        if (enemiesKilled == 78 && enableBossText && wave == 8)
+        {
+            StartCoroutine(Boss());
+        }
+
+        if (enemiesKilled == 117 && enableBossText && wave == 9)
+        {
+            StartCoroutine(Boss());
+        }
 
 
         if (bossesKilled == 1)
         {
-            bossTheme.Stop();
-            mainTheme.Play();
-            completedWave1 = true;
-            enableBossText = true;
-            followMouse.crosshair.SetActive(false);
-            shopMenu.SetActive(true);
-            Cursor.visible = true;
-            shopOpen = true;
-            pauseMenu.pause = true;
-            bossesKilled = 0;
+            StartCoroutine(BossKilled());
+            
         }
         if (wave == 2 && !roundStarted)
         {
@@ -124,8 +134,80 @@ public class EnemySpawner : MonoBehaviour
             waveText.text = "Wave " + wave.ToString();
             StartCoroutine(Enemyspawner5());
         }
+
+        if (wave == 6 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            StartCoroutine(Enemyspawner5());
+            {
+                if (enemiesKilled == 39)
+                {
+                    StartCoroutine(Enemyspawner3());
+                    
+                }
+            }
+        }
+        if (wave == 7 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            StartCoroutine(Enemyspawner5());
+            {
+                if (enemiesKilled == 39)
+                {
+                    StartCoroutine(Enemyspawner4());
+
+                }
+            }
+        }
+
+        if (wave == 8 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            StartCoroutine(Enemyspawner5());
+            {
+                if (enemiesKilled == 39)
+                {
+                    StartCoroutine(Enemyspawner5());
+
+                }
+            }
+        }
+
+        if (wave == 9 && !roundStarted)
+        {
+            waveText.text = "Wave " + wave.ToString();
+            StartCoroutine(Enemyspawner5());
+            {
+                if (enemiesKilled == 39)
+                {
+                    StartCoroutine(Enemyspawner5());
+
+                }
+                if(enemiesKilled == 78)
+                {
+                    StartCoroutine(Enemyspawner5());
+                }
+            }
+        }
     }
 
+
+    IEnumerator BossKilled()
+    {
+        bossesKilled = 0;
+        yield return new WaitForSeconds(3);
+        bossTheme.Stop();
+        mainTheme.Play();
+        completedWave1 = true;
+        enableBossText = true;
+        followMouse.crosshair.SetActive(false);
+        shopMenu.SetActive(true);
+        Cursor.visible = true;
+        shopOpen = true;
+        pauseMenu.pause = true;
+        
+
+    }
     #region Wave system
 
     //wave 1

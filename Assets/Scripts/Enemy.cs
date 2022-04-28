@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 	public GameObject deadEnemy;
 	public bool isFireEnemy;
 	public bool isFlyingEnemy;
+	public bool isSmallEnemy;
 	EnemySpawner enemySpawner;
 	public Transform position;
 	Score score;
@@ -75,6 +76,9 @@ public class Enemy : MonoBehaviour
 
 		if (other.tag == "Bomb")
 			currentHp = 0;
+
+		if (enemySpawner.wave > 5 && !isFlyingEnemy && !isSmallEnemy)
+			speed = 1;
 
 	}
 

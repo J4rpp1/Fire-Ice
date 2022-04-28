@@ -145,6 +145,7 @@ MonoBehaviour:
   deadEnemy: {fileID: 6492992145747641400, guid: c27afe5c40f14c3479e185d36c0a126e, type: 3}
   isFireEnemy: 1
   isFlyingEnemy: 0
+  isSmallEnemy: 1
   position: {fileID: 1475917044050905160}
   speed: 0.4
   target: {fileID: 0}

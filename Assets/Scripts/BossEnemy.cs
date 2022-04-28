@@ -5,6 +5,8 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     public Animator attacAni;
+    public Transform position;
+    public GameObject deadEnemy;
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
@@ -14,11 +16,13 @@ public class BossEnemy : MonoBehaviour
     public int damage = 1;
     public float maxHp = 30;
     public float currentHp;
-    public float takeDamage = 5;
+    public float takeDamage = 1;
+    public float takeBombDamage = 10;
     public float addPoints = 1000;
     public bool damaging;
     public int handsBroken;
     private bool areHandsBroken;
+    public bool canTakeDamage;
     private void Awake()
     {
         attacAni = GetComponentInChildren<Animator>();
@@ -31,6 +35,7 @@ public class BossEnemy : MonoBehaviour
     {
         target = GameObject.FindWithTag("target").transform;
         currentHp = maxHp;
+        canTakeDamage = true;
     }
 
     // Update is called once per frame
@@ -51,9 +56,9 @@ public class BossEnemy : MonoBehaviour
         }
         if (currentHp < 1)
         {
-            
-            /* enemySpawner.bossesKilled = enemySpawner.bossesKilled + 1;
-            score.currentScore = score.currentScore + addPoints;*/
+            Instantiate(deadEnemy, position.position, position.rotation);
+            enemySpawner.bossesKilled = enemySpawner.bossesKilled + 1;
+            score.currentScore = score.currentScore + addPoints;
             Destroy(gameObject);
         }
 
@@ -74,8 +79,11 @@ public class BossEnemy : MonoBehaviour
         {
             currentHp = currentHp - takeDamage;
         }
-        if (other.tag == "Bomb" && areHandsBroken)
-            currentHp = currentHp - 10;
+        if (other.tag == "Bomb" && areHandsBroken && canTakeDamage)
+        {
+            StartCoroutine(BombDamage());
+        }
+            
     }
 
     IEnumerator Damage()
@@ -91,5 +99,12 @@ public class BossEnemy : MonoBehaviour
 
         }
 
+    }
+    IEnumerator BombDamage()
+    {
+        canTakeDamage = false;
+        currentHp = currentHp - takeBombDamage;
+        yield return new WaitForSeconds(0.9f);
+        canTakeDamage = true;
     }
 }
