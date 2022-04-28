@@ -396,12 +396,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44dfec950d1ee44292c6f857338ffdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brokenHands: {fileID: 0}
+  brokenPosition: {fileID: 1399976056627143766}
   hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
   blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
   isFireHand: 1
   takeDamage: 1
   currentHp: 0
-  maxHp: 5
+  maxHp: 10
 --- !u!65 &6963117510683993509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -677,6 +679,9 @@ GameObject:
   - component: {fileID: 4941644513601789833}
   - component: {fileID: 5606360570747134715}
   - component: {fileID: 6606484338795297835}
+  - component: {fileID: 797072261070527159}
+  - component: {fileID: 2024211922}
+  - component: {fileID: 2024211921}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -759,8 +764,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.157973, z: 1.48}
+  m_Center: {x: 0, y: 0.03957047, z: -0.15}
 --- !u!114 &6606484338795297835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,16 +778,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624f53aa9deacf64b8757af60ad1e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attacAni: {fileID: 0}
   speed: 0.2
   target: {fileID: 0}
-  damage: 5
-  maxHp: 30
+  damage: 1
+  maxHp: 15
   currentHp: 0
   takeDamage: 1
   addPoints: 1000
-  addToKills: 1
   damaging: 0
   handsBroken: 0
+--- !u!65 &797072261070527159
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837933679082006591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.157973, z: 0.9999999}
+  m_Center: {x: 0, y: 0.03957047, z: -0.45}
+--- !u!54 &2024211922
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837933679082006591}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2024211921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837933679082006591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09, y: 0.18, z: 3.08}
+  m_Center: {x: 0, y: -0.54, z: -2.65}
 --- !u!1 &6205951330251839520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,12 +1207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44dfec950d1ee44292c6f857338ffdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brokenHands: {fileID: 0}
+  brokenPosition: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 8bd243e99d0c9e44888dc06307027e56, type: 3}
   blockSound: {fileID: 8300000, guid: d761b8967b6e1ca458eb78f22f08b73f, type: 3}
   isFireHand: 0
   takeDamage: 1
   currentHp: 0
-  maxHp: 5
+  maxHp: 10
 --- !u!65 &9049422499139338365
 BoxCollider:
   m_ObjectHideFlags: 0

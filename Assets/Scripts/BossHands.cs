@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossHands : MonoBehaviour
 {
+	public Rigidbody brokenHands;
+	public Transform brokenPosition;
 	[SerializeField] AudioClip hurtSound;
 	[SerializeField] AudioClip blockSound;
 	BossEnemy bossEnemy;
@@ -15,6 +17,7 @@ public class BossHands : MonoBehaviour
     void Start()
     {
 		currentHp = maxHp;
+		
 		bossEnemy = FindObjectOfType<BossEnemy>();
 	}
 
@@ -59,7 +62,8 @@ public class BossHands : MonoBehaviour
 		if (currentHp < 1)
 		{
 			bossEnemy.handsBroken = bossEnemy.handsBroken + 1;
-			
+			Rigidbody instantiatedProjectile = Instantiate(brokenHands, brokenPosition.position, brokenPosition.rotation) as Rigidbody;
+			instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, 0.4f));
 			Destroy(gameObject);
 
 		}

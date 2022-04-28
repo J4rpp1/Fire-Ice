@@ -3424,7 +3424,7 @@ GameObject:
   - component: {fileID: 7960101173524513054}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3529,8 +3529,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.7559783, z: 3.062971}
-  m_Center: {x: 0, y: 0.3779893, z: 1.0314856}
+  m_Size: {x: 1, y: 4.2459154, z: 3.062971}
+  m_Center: {x: 0, y: -0.36697876, z: 1.0314856}
 --- !u!114 &1578175382
 MonoBehaviour:
   m_ObjectHideFlags: 0

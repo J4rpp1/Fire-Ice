@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
-
+    public Animator attacAni;
     EnemySpawner enemySpawner;
     Score score;
     PlayerHp playerHp;
@@ -16,11 +16,12 @@ public class BossEnemy : MonoBehaviour
     public float currentHp;
     public float takeDamage = 5;
     public float addPoints = 1000;
-    public int addToKills = 1;
     public bool damaging;
     public int handsBroken;
+    private bool areHandsBroken;
     private void Awake()
     {
+        attacAni = GetComponentInChildren<Animator>();
         instance = this;
         playerHp = FindObjectOfType<PlayerHp>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
@@ -44,14 +45,17 @@ public class BossEnemy : MonoBehaviour
         }
         if (handsBroken == 2)
         {
-            Debug.Log("käsirauvat");
+            areHandsBroken = true;
+            speed = 0.5f;
+            
         }
-        /*if (currentHp< 0)
+        if (currentHp < 1)
         {
-            enemySpawner.bossesKilled = enemySpawner.bossesKilled + addToKills;
-            score.currentScore = score.currentScore + addPoints;
+            
+            /* enemySpawner.bossesKilled = enemySpawner.bossesKilled + 1;
+            score.currentScore = score.currentScore + addPoints;*/
             Destroy(gameObject);
-        }*/
+        }
 
     }
 
@@ -62,15 +66,15 @@ public class BossEnemy : MonoBehaviour
             //playerHp.currentHp -= Time.deltaTime * damage / 6f;
             StartCoroutine(Damage());
         }
-        if (other.tag == "FireBullet")
-        {
-            currentHp = currentHp + takeDamage;
-        }
-        if (other.tag == "IceBullet")
+        if (other.tag == "FireBullet" && areHandsBroken)
         {
             currentHp = currentHp - takeDamage;
         }
-        if (other.tag == "Bomb")
+        if (other.tag == "IceBullet" && areHandsBroken)
+        {
+            currentHp = currentHp - takeDamage;
+        }
+        if (other.tag == "Bomb" && areHandsBroken)
             currentHp = currentHp - 10;
     }
 
@@ -78,10 +82,11 @@ public class BossEnemy : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Perse");
             damaging = true;
+            attacAni.SetBool("IsAttacking", true);
+            
+            yield return new WaitForSeconds(1.57f);
             playerHp.currentHp = playerHp.currentHp - damage;
-            yield return new WaitForSeconds(1);
             damaging = false;
 
         }
