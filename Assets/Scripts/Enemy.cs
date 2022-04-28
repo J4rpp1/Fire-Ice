@@ -38,10 +38,13 @@ public class Enemy : MonoBehaviour
 
 
 
-	private void OnColliderEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
 		if (isFireEnemy)
 		{
+			if (other.name == "Player" && canDamage)
+			StartCoroutine(Damage());
+			
 			if (other.tag == "FireBullet")
 			{
 				EnemyHurt(false);
@@ -53,7 +56,10 @@ public class Enemy : MonoBehaviour
 		}
 
 		if (!isFireEnemy)
-		{
+		{	
+			if (other.name == "Player" && canDamage)
+			StartCoroutine(Damage());
+
 			if (other.tag == "FireBullet")
 			{
 				EnemyHurt(true);
@@ -68,11 +74,11 @@ public class Enemy : MonoBehaviour
 			currentHp = 0;
 
 	}
-	private void OnTriggerEnter(Collider other)
+	/* private void OnTriggerEnter(Collider other)
 	{
 		if (other.name == "Player" && canDamage)
 			StartCoroutine(Damage());
-	}
+	} */
 	void Start()
 	{
 		canDamage = true;
