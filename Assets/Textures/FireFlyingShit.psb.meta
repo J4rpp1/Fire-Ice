@@ -3816,8 +3816,8 @@ ScriptedImporter:
     uvTransform: {x: 881, y: -108}
   - name: VasenSiipi
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.9549253, y: 0.3889128}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -4580,8 +4580,8 @@ ScriptedImporter:
     uvTransform: {x: 1280, y: -635}
   - name: Oikeasiipi
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.037446752, y: 0.38687184}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -5322,8 +5322,8 @@ ScriptedImporter:
     uvTransform: {x: -767, y: -117}
   - name: Tail
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.38381496, y: 0.9172944}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
