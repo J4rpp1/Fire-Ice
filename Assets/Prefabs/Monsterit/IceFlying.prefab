@@ -58,6 +58,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2330976303555155426, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -991005601400164945, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: -0.000015735626
@@ -110,6 +114,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4494512815109846570, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5023144587848153422, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -141,6 +149,10 @@ PrefabInstance:
     - target: {fileID: 8713627610634210761, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
       propertyPath: m_Bounds.m_Extent.x
       value: 0.36002517
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725745555413636749, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8750801657696528720, guid: bc1def10e9cca824bb07db1a652b7bd2, type: 3}
       propertyPath: m_RootOrder
