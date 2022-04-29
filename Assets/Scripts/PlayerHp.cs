@@ -55,7 +55,7 @@ public class PlayerHp : MonoBehaviour
                 PlayerPrefs.SetInt("lastScore", score.score);
             }
             
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
 

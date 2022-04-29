@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(enemiesKilled);
+        
         if (enemiesKilled == 12 && enableBossText && completedWave1 == false)
         {
             StartCoroutine(Boss());

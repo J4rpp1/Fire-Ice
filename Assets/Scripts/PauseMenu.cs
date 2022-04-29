@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         SFX.instance.PlayClip(clickSound, 1f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
         
     }
 }

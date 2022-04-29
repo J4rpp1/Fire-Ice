@@ -21,7 +21,7 @@ public class StartMenu : MonoBehaviour
     public void StartGame()
     {
         SFX.instance.PlayClip(clickSound, 1f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void OpenInfo()
