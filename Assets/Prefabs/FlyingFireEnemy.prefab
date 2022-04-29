@@ -146,6 +146,7 @@ MonoBehaviour:
   deadEnemy: {fileID: 6659926125263150935, guid: 169bea88e257827429f8f3b60630b81c, type: 3}
   isFireEnemy: 1
   isFlyingEnemy: 1
+  isSmallEnemy: 0
   position: {fileID: 932315134623566683}
   speed: 1.3
   target: {fileID: 0}
@@ -169,14 +170,6 @@ PrefabInstance:
     - target: {fileID: 179036228173977739, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -0.03118515
-      objectReference: {fileID: 0}
-    - target: {fileID: 1591611164961737324, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1649750104314110528, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3501114531342652094, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
       propertyPath: m_Bounds.m_Center.x
@@ -258,10 +251,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014880269951838431, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8669182656414896811, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: 0.027655602
@@ -273,10 +262,6 @@ PrefabInstance:
     - target: {fileID: 8669182656414896811, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
       propertyPath: m_Bounds.m_Extent.y
       value: 2.6089754
-      objectReference: {fileID: 0}
-    - target: {fileID: 8893137487955260017, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea1dbc8bc186244194d9568ce494a3f, type: 3}

@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568717053084400563, guid: cbd3688228366c9448a98f891d402d86, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4077664161601968363, guid: cbd3688228366c9448a98f891d402d86, type: 3}
       propertyPath: m_Name
       value: IceFlyingDEAD
