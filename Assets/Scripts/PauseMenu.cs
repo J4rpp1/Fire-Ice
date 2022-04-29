@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !pause)
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) && !pause)
         {
             Cursor.visible = true;
             pauseMenuUi.SetActive(true);
