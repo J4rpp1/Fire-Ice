@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3842590376917769806}
   - component: {fileID: 777415260897248476}
   - component: {fileID: 5959903254477368218}
+  - component: {fileID: 185535867534816659}
   m_Layer: 0
   m_Name: FlyingIceEnemy
   m_TagString: Untagged
@@ -156,6 +157,19 @@ MonoBehaviour:
   takeDamage: 1
   addPoints: 100
   addToKills: 1
+--- !u!114 &185535867534816659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659926125263150935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6fdb5e577a9af4badec09874b6cc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 0}
 --- !u!1001 &3391356397294461169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,6 +177,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 932315134623566683}
     m_Modifications:
+    - target: {fileID: 343036385666030590, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 450979604935935687, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1336429007435874997, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: -0.04914975
@@ -171,9 +193,17 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Center.y
       value: 0.018229485
       objectReference: {fileID: 0}
+    - target: {fileID: 1336429007435874997, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_Bounds.m_Center.z
+      value: -0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2267899712597813477, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574403943817015313, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5738855563918340779, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -186,6 +216,10 @@ PrefabInstance:
     - target: {fileID: 5988020544163066720, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: 0.030126572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988020544163066720, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_Bounds.m_Center.z
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5988020544163066720, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -258,6 +292,10 @@ PrefabInstance:
     - target: {fileID: 6470409838121259782, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: -0.015494943
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470409838121259782, guid: 86824e957b515554482bd4261a9661be, type: 3}
+      propertyPath: m_Bounds.m_Center.z
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 9115338648147440849, guid: 86824e957b515554482bd4261a9661be, type: 3}
       propertyPath: m_SortingOrder
