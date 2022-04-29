@@ -244,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 1521177248286892688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.553, z: -0.62}
-  m_LocalScale: {x: 2.5180802, y: -0.05, z: 17.835417}
+  m_LocalScale: {x: 2.5180802, y: 0.1, z: 17.835417}
   m_Children: []
   m_Father: {fileID: 7547488708454242770}
   m_RootOrder: 1
@@ -875,6 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624f53aa9deacf64b8757af60ad1e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 798ad505e48c1394dad53983d5e23397, type: 3}
   attacAni: {fileID: 0}
   position: {fileID: 7547488708454242770}
   deadEnemy: {fileID: 5837933679082006591, guid: 38def91c043d30d4cb3ea29bbf67a48e, type: 3}
@@ -884,9 +885,11 @@ MonoBehaviour:
   maxHp: 30
   currentHp: 0
   takeDamage: 1
+  takeBombDamage: 10
   addPoints: 1000
   damaging: 0
   handsBroken: 0
+  canTakeDamage: 0
 --- !u!65 &797072261070527159
 BoxCollider:
   m_ObjectHideFlags: 0

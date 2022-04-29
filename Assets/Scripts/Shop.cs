@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField] AudioClip clickSound;
     public static Shop instance;
     EnemySpawner enemySpawner;
     PauseMenu pauseMenu;
@@ -39,6 +40,7 @@ public class Shop : MonoBehaviour
     {
         if(score.currentScore > 2000)
         {
+            SFX.instance.PlayClip(clickSound, 1f);
             score.currentScore = score.currentScore - 2000;
             bombAttack.bombCount = bombAttack.bombCount + 1;
         }
@@ -49,6 +51,7 @@ public class Shop : MonoBehaviour
     {
         if (score.currentScore > 2000 && playerHp.currentHp < 5)
         {
+            SFX.instance.PlayClip(clickSound, 1f);
             score.currentScore = score.currentScore - 2000;
             playerHp.currentHp = playerHp.currentHp + 1;
         }
@@ -57,6 +60,7 @@ public class Shop : MonoBehaviour
 
     public void NextWave()
     {
+        SFX.instance.PlayClip(clickSound, 1f);
         enemySpawner.wave = enemySpawner.wave + 1;
         enemySpawner.roundStarted = false;
         pauseMenu.pause = false;

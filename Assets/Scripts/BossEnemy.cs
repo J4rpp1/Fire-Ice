@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
+    [SerializeField] AudioClip deathSound;
     public Animator attacAni;
     public Transform position;
     public GameObject deadEnemy;
@@ -56,6 +57,7 @@ public class BossEnemy : MonoBehaviour
         }
         if (currentHp < 1)
         {
+            SFX.instance.PlayClip(deathSound, 1f);
             Instantiate(deadEnemy, position.position, position.rotation);
             enemySpawner.bossesKilled = enemySpawner.bossesKilled + 1;
             score.currentScore = score.currentScore + addPoints;

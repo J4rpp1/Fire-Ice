@@ -74,8 +74,7 @@ public class Enemy : MonoBehaviour
 		if (other.tag == "Bomb")
 			currentHp = 0;
 
-		if (enemySpawner.wave > 5 && !isFlyingEnemy && !isSmallEnemy)
-			speed = 1;
+	
 
 	}
 	/* private void OnTriggerEnter(Collider other)
@@ -119,7 +118,18 @@ public class Enemy : MonoBehaviour
 			EnemyDie();
 		}
 
-
+		if (enemySpawner.wave > 5 && !isFlyingEnemy && !isSmallEnemy)
+        {
+			speed = 1.3f;
+		}
+		if (enemySpawner.wave > 6 && !isFlyingEnemy && !isSmallEnemy)
+		{
+			speed = 1.4f;
+		}
+		if (enemySpawner.wave > 7 && !isFlyingEnemy && !isSmallEnemy)
+		{
+			speed = 1.5f;
+		}
 	}
 
 	void EnemyHurt(bool hurt)
@@ -151,7 +161,8 @@ public class Enemy : MonoBehaviour
 		canDamage = false;
 		playerHp.currentHp = playerHp.currentHp - damage;
 		yield return new WaitForSeconds(0.1f);
-		
+		Instantiate(deadEnemy, position.position, position.rotation);
+
 		Destroy(gameObject);
 
 	}

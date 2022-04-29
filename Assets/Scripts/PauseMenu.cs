@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] AudioClip clickSound;
     public GameObject pauseMenuUi;
     public static PauseMenu instance;
     public bool pause;
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        SFX.instance.PlayClip(clickSound, 1f);
         pauseMenuUi.SetActive(false);
         pause = false;
         Cursor.visible = false;
@@ -43,6 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        SFX.instance.PlayClip(clickSound, 1f);
         SceneManager.LoadScene(2);
         
     }

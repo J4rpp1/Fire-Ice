@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] AudioClip clickSound;
+    public GameObject info;
+ 
+
     void Start()
     {
         
@@ -17,6 +20,19 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame()
     {
+        SFX.instance.PlayClip(clickSound, 1f);
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenInfo()
+    {
+        SFX.instance.PlayClip(clickSound, 1f);
+        info.SetActive(true);
+    }
+    
+    public void CloseInfo()
+    {
+        SFX.instance.PlayClip(clickSound, 1f);
+        info.SetActive(false);
     }
 }
